@@ -64,6 +64,37 @@ docker-compose up -d
 - test/: Test files
 - config/: Configuration files
 
+## Custom Keycloak Realm Configuration
+
+1. Create a custom realm configuration file keycloak-realm-config.json in the config directory.
+2. Update your docker-compose.yml to include the volume and import command for the custom configuration.
+
+Example keycloak-realm-config.json:
+
+```json
+{
+  "realm": "myrealm",
+  "enabled": true,
+  "users": [
+    {
+      "username": "testuser",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "testuser@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "testpassword",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Contributing
 
 1. Fork the repository
