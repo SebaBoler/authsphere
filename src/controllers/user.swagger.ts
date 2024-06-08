@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /v1/user:
+ * /v1/users:
  *   post:
  *     summary: Create a new user
  *     consumes:
@@ -35,7 +35,7 @@ export const createUserSwagger = {};
 
 /**
  * @swagger
- * /v1/user:
+ * /v1/users:
  *   put:
  *     summary: Update user attributes
  *     consumes:
