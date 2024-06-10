@@ -1,6 +1,11 @@
 {
   "realm": "myrealm",
   "enabled": true,
+  "duplicateEmailsAllowed": false,
+  "passwordPolicy": "length(10) and maxLength(256) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1) and notUsername() and notEmail() and history(10)",
+  "accessCodeLifespan": 60,
+  "accessCodeLifespanUserAction": 60,
+  "refreshTokenLifespan": 86400,
   "users": [
     {
       "username": "testuser",

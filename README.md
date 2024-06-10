@@ -75,6 +75,11 @@ Example keycloak-realm-config.json:
 {
   "realm": "myrealm",
   "enabled": true,
+  "duplicateEmailsAllowed": false,
+  "passwordPolicy": "length(10) and maxLength(256) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1) and notUsername() and notEmail() and history(10)",
+  "accessCodeLifespan": 60,
+  "accessCodeLifespanUserAction": 60,
+  "refreshTokenLifespan": 86400,
   "users": [
     {
       "username": "testuser",
@@ -94,6 +99,36 @@ Example keycloak-realm-config.json:
   ]
 }
 ```
+
+### Password Policy
+
+The password policy for the Keycloak realm is configured to ensure a high level of security:
+
+Minimum Length: Passwords must be at least 10 characters long.
+Maximum Length: Passwords can be up to 256 characters long.
+Complexity Requirements:
+* At least 1 digit.
+* At least 1 lowercase letter.
+* At least 1 uppercase letter.
+* At least 1 special character.
+Uniqueness:
+* Passwords must not contain the username or email address.
+* Users cannot reuse their last 10 passwords (password history).
+
+### User Configuration
+
+In the provided configuration, a default user is created with the following properties:
+
+- Username: testuser
+- Enabled: The user account is enabled.
+- Email Verified: The email address associated with the user account is verified.
+- First Name: Test
+- Last Name: User
+- Email: testuser@example.com
+- Credentials:
+  - Type: Password
+  - Value: testpassword
+  - Temporary: The password is not temporary, meaning the user is not required to change it at the next login.
 
 ## Contributing
 

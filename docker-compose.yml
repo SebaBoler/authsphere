@@ -34,7 +34,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./keycloak-realm-config.json:/opt/keycloak/data/import/keycloak-realm-config.json
+      - ./config/keycloak-realm-config.json:/opt/keycloak/data/import/keycloak-realm-config.json
 
 volumes:
   postgres_data:
