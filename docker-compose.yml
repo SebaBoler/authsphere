@@ -12,7 +12,7 @@ services:
       POSTGRES_PASSWORD: password
 
   keycloak_web:
-    image: quay.io/keycloak/keycloak:24.0.3
+    image: quay.io/keycloak/keycloak:25.0.0
     container_name: keycloak_web
     environment:
       KC_DB: postgres
@@ -28,7 +28,7 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin_password
     entrypoint: ["/opt/keycloak/bin/kc.sh"]
-    command: ["start-dev", "--import-realm"]
+    command: ["start-dev", "--import-realm", "--features=organization"]
     depends_on:
       - postgres
     ports:
