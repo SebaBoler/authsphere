@@ -28,7 +28,7 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin_password
     entrypoint: ["/opt/keycloak/bin/kc.sh"]
-    command: ["start-dev", "--import-realm", "--features=organization"]
+    command: ["start-dev", "--import-realm", "--features=preview"]
     depends_on:
       - postgres
     ports:
